@@ -1,0 +1,154 @@
+@font-face{font-family:YogaRounded;src:url('assets/hero-rounded.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:FooterCondensed;src:url('assets/footer-condensed.woff2') format('woff2');font-display:swap}
+@font-face{font-family:FooterBlack;src:url('assets/footer-black.woff2') format('woff2');font-display:swap}
+@font-face{font-family:FooterBody;src:url('assets/footer-body.woff2') format('woff2');font-display:swap}
+:root{--lime:#e6ff55;--forest:#0b2119;--mint:#c9eee1;--pink:#efc0cd}
+.strap-graphic{position:absolute;pointer-events:none;display:block;overflow:visible}
+.yoga-hero{isolation:isolate}
+.yoga-hero .hero-image-wrap{z-index:-3}
+.yoga-hero .hero-shade{background:linear-gradient(#091a1640,#091a1640 40%,#091a16a6)}
+.hero-strap{z-index:-1;width:78vw;height:78vw;max-width:1150px;max-height:1150px;left:-23vw;bottom:-42vw;color:#0b2119;transform:rotate(-14deg);animation:strap-drift 14s ease-in-out infinite alternate}
+.yoga-hero .hero-heading{left:5%;right:5%;top:100px;text-align:center}
+.yoga-hero h1{font-family:YogaRounded,Arial,sans-serif;font-weight:800;font-size:clamp(54px,6.45vw,110px);line-height:1.04;letter-spacing:-.045em;color:var(--lime);white-space:normal}
+.yoga-hero .hero-heading .line{overflow:visible}
+.yoga-hero .hero-heading .line>span{display:block}
+.hero-asterisk{color:var(--pink);display:inline-block;font-size:.65em;vertical-align:top;line-height:1.25;transform-origin:center;margin-left:.06em;animation:asterisk-turn 9s ease-in-out infinite}
+.yoga-hero .hero-actions{justify-content:center;margin-top:100px;gap:28px}
+.yoga-hero .hero-intro{top:315px;left:50%;width:max-content;max-width:85%;transform:translateX(-50%);text-align:center;font-size:17px;line-height:1.5;animation:hero-caption-in 1.4s .3s var(--ease) both}
+.yoga-hero .hero-intro br{display:none}
+.yoga-hero .pill-button{background:var(--lime);border:0;min-height:50px;border-radius:11px;font-family:Inter;font-size:14px;text-transform:none;font-weight:600;padding:8px 20px 8px 10px}
+.yoga-hero .pill-button:hover{padding-right:40px;background:#efff95}
+.yoga-hero .arrow-link{color:var(--lime);font:600 14px Inter;text-transform:none}
+.yoga-hero .hero-copy{font-size:16px;line-height:1.65;max-width:435px;z-index:2}
+.practice-benefits{background:#fffefb;isolation:isolate;display:flex;padding-top:100px}
+.practice-strap{width:50vw;height:70vw;left:-32vw;top:12%;color:#00593f;opacity:.075;z-index:-1}
+.practice-top{text-align:center;flex:none;margin-bottom:25px}
+.practice-top>.eyebrow{font-size:12px;margin-bottom:14px}
+.practice-top h2{font-family:YogaRounded;font-size:clamp(25px,2.8vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--forest)}
+.practice-top h2 br{display:none}
+.practice-tabs{display:flex;position:relative;isolation:isolate;background:#f3efe5;border-radius:50px;padding:5px;width:350px;max-width:100%;margin:20px auto 0}
+.practice-tabs button{background:transparent;flex:1;border-radius:40px;padding:12px 15px;position:relative;z-index:1;color:var(--forest);font-size:14px;font-weight:600;transition:color .4s}
+.practice-tabs button[aria-selected=true]{color:var(--lime)}
+.practice-tabs>span{position:absolute;z-index:0;left:5px;top:5px;bottom:5px;width:calc((100% - 10px)/2);border-radius:40px;background:var(--forest);transition:transform .6s var(--ease)}
+.practice-card-grid{gap:18px}
+.practice-card{flex:0 0 calc((100% - 36px)/3);height:100%;scroll-snap-align:start;border-radius:18px;padding:28px 30px;display:flex;flex-direction:column;align-items:stretch;min-height:0}
+.practice-card:nth-child(1){background:#0b211d;color:#caeee1}
+.practice-card:nth-child(2){background:#352515;color:#f9ec97}
+.practice-card:nth-child(3){background:#e94920;color:#f0c3b5}
+.practice-card h3{font-family:YogaRounded;font-size:clamp(24px,3.3vw,50px);line-height:1.12;letter-spacing:-.055em;margin-bottom:24px}
+.practice-card ul{padding-left:14px;margin:0;font-size:14px;line-height:1.65;font-family:Inter;letter-spacing:-.03em}
+.practice-card li{margin-bottom:4px;padding-left:0}
+.practice-card>a{margin-top:auto;display:flex;justify-content:center;align-items:center;text-align:center;min-height:46px;border-radius:9px;font-size:14px;font-weight:600;background:currentColor;position:relative;overflow:hidden;transition:transform .4s,filter .4s}
+.practice-card>a span{color:#0b211d;position:relative;z-index:1}
+.practice-card:nth-child(3)>a span{color:#e94920}
+.practice-card>a:after{content:'';position:absolute;inset:0;background:#fff;opacity:0;transition:opacity .3s}
+.practice-card>a:hover{transform:translateY(-3px)}.practice-card>a:hover:after{opacity:.17}
+.practice-carousel>.carousel-controls{display:none}
+.footer.yoga-footer{padding:0;display:grid;grid-template-rows:150px 44px minmax(0,1fr);background:#005b9f;color:#fff6eb;isolation:isolate}
+.footer-social-band{background:#fff6eb;display:flex;align-items:center;justify-content:center}
+.footer-socials{display:flex;gap:16px;align-items:center;padding-top:15px}
+.social-circle{display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:50%;color:#fff6eb;transition:transform .6s var(--ease)}
+.social-circle:hover{transform:translateY(-7px) rotate(-8deg)}
+.social-circle svg{width:65%;height:65%}.social-circle.instagram{background:#bf008d}.social-circle.tiktok{background:#55c8c9}.social-circle.youtube{background:#c2003c}.social-circle.substack-social{background:#005b9f}
+.footer-marquee{background:#ffce7e;color:#ff7800;overflow:hidden;display:flex;align-items:center}
+.footer-marquee-track{display:flex;width:max-content;white-space:nowrap;animation:footer-ticker 24s linear infinite;will-change:transform}
+.footer-marquee-track>span{font:32px/1 FooterCondensed,Arial,sans-serif;text-transform:uppercase;display:inline-flex;align-items:center;gap:28px}
+.footer-marquee-track b{font-size:28px}
+.footer-blue-body{padding:22px 32px 17px;display:flex;flex-direction:column;min-height:0}
+.footer-brand{font:clamp(42px,4.8vw,72px)/1 FooterBlack,Arial,sans-serif;letter-spacing:-.04em;white-space:nowrap;align-self:flex-start;margin-bottom:18px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;min-height:0}
+.footer-yoga-links{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:5px}
+.footer-yoga-links a{font:clamp(20px,1.85vw,27px)/1.18 FooterCondensed,sans-serif;text-transform:uppercase;display:inline-block;position:relative}
+.footer-yoga-links a:after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:currentColor;transition:width .4s var(--ease)}
+.footer-yoga-links a:hover:after{width:100%}
+.footer-newsletter-wrap{max-width:450px;padding-top:0}
+.footer-newsletter-wrap h2{font:27px/1.2 FooterCondensed,Arial,sans-serif;text-transform:uppercase;letter-spacing:0;margin-bottom:20px}
+.footer-newsletter-wrap>p{font:20px/1.35 FooterBody,Inter,sans-serif;margin-bottom:22px;max-width:440px}
+.footer-newsletter{position:relative;display:flex;flex-wrap:wrap;align-items:center}
+.footer-newsletter input{width:100%;border:0;border-radius:10px;background:#cce1eb;min-height:44px;padding:10px 52px 10px 20px;color:#005b9f;font:20px/1 FooterCondensed,sans-serif;letter-spacing:.03em}
+.footer-newsletter input::placeholder{color:#005b9f;opacity:1}
+.footer-newsletter>button{position:absolute;right:10px;top:0;height:44px;width:34px;font-size:24px;background:none;color:#005b9f;transition:transform .4s}
+.footer-newsletter>button:hover{transform:translateX(4px)}
+.footer-form-message{width:100%;font:12px/1.4 FooterBody,Inter,sans-serif;margin-top:10px}
+.footer-yoga-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;font:11px/1.3 FooterBody,Inter,sans-serif;margin-top:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.header.footer-header{background:transparent;border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+@keyframes strap-drift{to{transform:translate(20px,-14px) rotate(-8deg)}}
+@keyframes asterisk-turn{0%,35%,100%{rotate:0deg}60%,80%{rotate:90deg}}
+@keyframes hero-caption-in{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@keyframes footer-ticker{to{transform:translateX(-50%)}}
+@media(max-width:1100px){
+ .yoga-hero .hero-heading{top:120px}.yoga-hero h1{font-size:6.6vw}.yoga-hero .hero-intro{top:300px;font-size:15px}.yoga-hero .hero-actions{margin-top:100px}.yoga-hero .hero-copy{font-size:15px}
+ .practice-benefits{padding-top:100px}.practice-card{padding:24px 22px}.practice-card h3{font-size:3.4vw;margin-bottom:20px}.practice-card ul{font-size:12px}.practice-card>a{font-size:12px;min-height:42px}
+ .footer-brand{font-size:52px}.footer-yoga-links a{font-size:22px}.footer-newsletter-wrap h2{font-size:24px}.footer-newsletter-wrap>p{font-size:17px}
+}
+@media(max-width:600px){
+ .yoga-hero .hero-heading{top:138px;left:18px;right:18px}
+ .yoga-hero h1{font-size:10.4vw;line-height:1.08;letter-spacing:-.055em}
+ .yoga-hero .hero-intro{top:262px;font-size:12px;max-width:85%;width:85%;line-height:1.5}
+ .yoga-hero .hero-actions{margin-top:95px;gap:20px}
+ .yoga-hero .pill-button{font-size:12px;min-height:44px;padding:6px 15px 6px 7px}
+ .yoga-hero .arrow-link{font-size:12px}
+ .yoga-hero .hero-copy{font-size:13px;line-height:1.5;bottom:238px;left:20px;width:calc(100% - 40px);max-width:340px}
+ .yoga-hero .hero-strap{width:170vw;height:170vw;left:-95vw;bottom:-45vw;opacity:.85}
+ .yoga-hero .showreel{width:290px;bottom:45px}
+ .practice-benefits{padding-top:90px}.practice-top{margin-bottom:22px}.practice-top>.eyebrow{font-size:10px;margin-bottom:12px}.practice-top h2{font-size:26px;line-height:1.12}.practice-top h2 br{display:block}
+ .practice-tabs{width:300px;margin-top:18px}.practice-tabs button{font-size:12px;padding:10px 12px}
+ .practice-card-grid{gap:16px}.practice-card{flex-basis:88%;padding:28px 25px;border-radius:16px}.practice-card h3{font-size:36px;margin-bottom:25px}.practice-card ul{font-size:13px;line-height:1.7}.practice-card>a{min-height:46px;font-size:13px}
+ .practice-carousel>.carousel-controls{display:flex;margin-top:14px}.practice-strap{width:95vw;height:145vw;left:-65vw;top:25%}
+ .footer.yoga-footer{grid-template-rows:140px 36px minmax(0,1fr)}
+ .footer-socials{gap:13px;padding-top:30px}.social-circle{width:52px;height:52px}.footer-marquee-track>span{font-size:26px;gap:22px}.footer-marquee-track b{font-size:22px}
+ .footer-blue-body{padding:22px 20px 20px}.footer-brand{font-size:36px;white-space:normal;letter-spacing:-.045em;margin-bottom:27px}
+ .footer-grid{grid-template-columns:1fr 1.12fr;gap:18px}.footer-yoga-links{gap:11px}.footer-yoga-links a{font-size:18px;line-height:1.12}
+ .footer-newsletter-wrap h2{font-size:20px;line-height:1.15;margin-bottom:15px}.footer-newsletter-wrap>p{font-size:13px;line-height:1.4;margin-bottom:20px}
+ .footer-newsletter input{min-height:39px;font-size:16px;padding:10px 34px 10px 12px;border-radius:7px}.footer-newsletter>button{height:39px;right:3px;width:25px;font-size:20px}.footer-form-message{font-size:10px}
+ .footer-yoga-bottom{font-size:9px;flex-wrap:wrap;gap:12px;margin-top:20px}.footer-yoga-bottom>span:nth-child(2){display:none}
+}
+@media(max-width:600px) and (max-height:740px){
+ .yoga-hero .hero-heading{top:115px}.yoga-hero h1{font-size:10vw}.yoga-hero .hero-intro{top:220px;font-size:11px}.yoga-hero .hero-actions{margin-top:75px}.yoga-hero .hero-copy{font-size:11.5px;line-height:1.45;bottom:205px}.yoga-hero .showreel{width:265px;bottom:40px}
+ .practice-benefits{padding-top:85px}.practice-top h2{font-size:23px}.practice-tabs{margin-top:15px}.practice-top{margin-bottom:18px}.practice-card{padding:22px}.practice-card h3{font-size:30px;margin-bottom:18px}.practice-card ul{font-size:12px;line-height:1.5}.practice-card>a{min-height:40px;font-size:12px}
+ .footer.yoga-footer{grid-template-rows:126px 32px minmax(0,1fr)}.footer-socials{padding-top:35px}.social-circle{width:46px;height:46px}.footer-brand{font-size:32px;margin-bottom:20px}.footer-blue-body{padding-top:18px;padding-bottom:16px}.footer-yoga-links{gap:8px}.footer-yoga-links a{font-size:16px}.footer-newsletter-wrap h2{font-size:18px}.footer-newsletter-wrap>p{font-size:12px;margin-bottom:15px}.footer-yoga-bottom{margin-top:12px;font-size:8px}
+}
+
+/* White navigation box, adapted to the yoga site's destinations. */
+.header.site-nav,.header.site-nav.scrolled,.header.site-nav.dark,.header.site-nav.footer-header,.header.site-nav.menu-visible{top:18px;left:28px;right:28px;height:64px;padding:0 24px;border:1px solid #0b211908;border-radius:8px;background:#fffffffa;color:#0b2119;box-shadow:0 2px 8px #0b211912;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.site-nav .brand{font:800 21px/1 YogaRounded,Arial,sans-serif;letter-spacing:-.065em;gap:7px}
+.site-nav .brand-symbol{width:8px;height:16px}
+.desktop-nav{display:flex;align-items:center;gap:28px;margin-left:auto;margin-right:auto;padding-left:20px;font-size:13px;line-height:1.4;font-weight:500}
+.nav-item{position:relative}.nav-disclosure{background:transparent;padding:21px 0;display:flex;gap:7px;align-items:center;font-size:13px}
+.nav-disclosure>span{font-size:14px;line-height:1;transition:rotate .3s}.nav-disclosure[aria-expanded=true]>span{rotate:180deg}
+.nav-contact{padding:21px 0}
+.nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:225px;padding:12px;background:white;border-radius:12px;box-shadow:0 15px 40px #071e1929;border:1px solid #0b211910;display:flex;flex-direction:column;gap:3px;animation:dropdown-in .3s var(--ease) both}
+.nav-dropdown[hidden]{display:none}.nav-dropdown>a{padding:12px 14px;border-radius:7px;white-space:nowrap;transition:background .3s}.nav-dropdown>a:hover{background:#eef4df}
+.nav-actions{display:flex;gap:10px;font-size:11px;font-weight:600;align-items:center}.nav-actions a{display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 17px;border-radius:8px;transition:transform .3s,background .3s}.nav-join{background:#e6ff55;color:#0b2119}.nav-training{background:#0b2119;color:white}.nav-actions a:hover{transform:translateY(-2px)}.nav-join:hover{background:#d9f837}.nav-training:hover{background:#15513a}
+.site-nav .menu-toggle{display:none}
+@keyframes dropdown-in{from{opacity:0;translate:0 -7px}to{opacity:1;translate:0 0}}
+
+/* The descriptive paragraph sits in the upper-left of the hero. */
+.yoga-hero .hero-copy{top:112px;bottom:auto;left:var(--gutter);width:21%;max-width:290px;font-size:14px;line-height:1.6}
+.yoga-hero .hero-heading{left:30%;right:4%;top:112px}
+.yoga-hero h1{font-size:clamp(48px,5.2vw,92px);line-height:1.08}
+.yoga-hero .hero-intro{left:35%;top:300px;transform:none;max-width:58%;width:auto;text-align:left;font-size:15px}
+.yoga-hero .hero-actions{justify-content:flex-start;margin-top:95px;padding-left:7%;gap:28px}
+.yoga-hero .showreel{width:28%;max-width:400px}
+
+/* Leave a clear band below the fixed navigation before the footer starts. */
+.footer.yoga-footer{grid-template-rows:210px 44px minmax(0,1fr)}
+.footer-social-band{align-items:flex-end;padding-bottom:18px}.footer-socials{padding-top:0}
+.footer-blue-body{padding-top:18px;padding-bottom:13px}.footer-brand{font-size:58px;margin-bottom:15px}.footer-yoga-links{gap:5px}.footer-yoga-links a{font-size:24px;line-height:1.15}.footer-yoga-bottom{margin-top:10px}
+@media(max-width:1100px){.desktop-nav{gap:20px;padding-left:15px}.site-nav .brand{font-size:19px}.nav-actions{gap:8px}.nav-actions a{padding:0 12px}.yoga-hero .hero-intro{top:285px;font-size:14px}.footer-brand{font-size:50px}.footer-yoga-links a{font-size:22px}.footer-newsletter-wrap h2{font-size:23px}.footer-newsletter-wrap>p{font-size:17px}}
+@media(max-width:900px){.desktop-nav,.nav-actions{display:none}.site-nav .menu-toggle{display:flex}.header.site-nav,.header.site-nav.scrolled,.header.site-nav.dark,.header.site-nav.footer-header,.header.site-nav.menu-visible{left:20px;right:20px;padding:0 18px}.yoga-hero .hero-copy{font-size:12px;width:23%;top:105px}.yoga-hero .hero-heading{left:29%;top:135px}.yoga-hero .hero-intro{left:34%;top:300px;max-width:60%}.yoga-hero .hero-actions{margin-top:95px;padding-left:5%;gap:18px}.yoga-hero .hero-actions .arrow-link{font-size:12px}}
+@media(max-width:600px){
+ .header.site-nav,.header.site-nav.scrolled,.header.site-nav.dark,.header.site-nav.footer-header,.header.site-nav.menu-visible{top:14px;left:14px;right:14px;height:60px;padding:0 16px}.site-nav .brand{font-size:18px}.site-nav .menu-toggle{font-size:17px}.site-nav .hamburger{width:21px}
+ .yoga-hero .hero-copy{top:96px;bottom:auto;left:20px;width:calc(100% - 40px);max-width:350px;font-size:12px;line-height:1.5}
+ .yoga-hero .hero-heading{top:278px;left:18px;right:18px}.yoga-hero h1{font-size:10.4vw;line-height:1.08}
+ .yoga-hero .hero-intro{left:20px;right:20px;top:440px;width:auto;max-width:none;text-align:center;font-size:12px}
+ .yoga-hero .hero-actions{padding:0;justify-content:center;margin-top:88px;gap:19px}.yoga-hero .showreel{width:290px;max-width:calc(100% - 40px);bottom:45px}
+ .footer.yoga-footer{grid-template-rows:190px 36px minmax(0,1fr)}.footer-social-band{padding-bottom:20px}.footer-socials{padding-top:0}.footer-blue-body{padding:22px 20px 20px}.footer-brand{font-size:36px;margin-bottom:24px}.footer-yoga-links{gap:10px}.footer-yoga-links a{font-size:18px;line-height:1.12}.footer-newsletter-wrap h2{font-size:20px}.footer-newsletter-wrap>p{font-size:13px}.footer-yoga-bottom{margin-top:20px}
+}
+@media(max-width:600px) and (max-height:740px){
+ .yoga-hero .hero-copy{top:89px;font-size:10.5px;line-height:1.42}.yoga-hero .hero-heading{top:218px}.yoga-hero h1{font-size:10vw}.yoga-hero .hero-intro{top:366px;font-size:11px}.yoga-hero .hero-actions{margin-top:78px}.yoga-hero .showreel{width:245px;bottom:40px}
+ .footer.yoga-footer{grid-template-rows:175px 32px minmax(0,1fr)}.footer-social-band{padding-bottom:18px}.footer-blue-body{padding:18px 20px 15px}.footer-brand{font-size:31px;margin-bottom:19px}.footer-yoga-links{gap:8px}.footer-yoga-links a{font-size:16px}.footer-newsletter-wrap h2{font-size:18px}.footer-newsletter-wrap>p{font-size:12px;margin-bottom:15px}.footer-yoga-bottom{margin-top:12px}
+}
+.section-navigation{top:auto;bottom:38px;right:10px;transform:none}
+@media(max-width:600px){.section-navigation{top:auto;bottom:38px;right:8px;transform:none}}
