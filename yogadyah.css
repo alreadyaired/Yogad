@@ -355,7 +355,7 @@ html[data-motion=reduce] .testimonials-carousel{overflow-x:auto}
 
 /* Compact album: justified rows with natural image proportions and a bounded height. */
 .gallery-section{background:var(--white);padding-top:70px;padding-bottom:70px}
-.gallery-section>.section-inner{max-width:1100px}
+.gallery-section>.section-inner{max-width:none;width:100%}
 .gallery-heading{max-width:650px;margin-bottom:30px}
 .gallery-heading .eyebrow{margin-bottom:18px}
 .gallery-heading h2{font-size:44px;line-height:1.13}
