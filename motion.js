@@ -15,7 +15,7 @@
       else scrollDriver.start();
     }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   }
-  const select = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+  const select = (selector, scope = document) => [...scope.querySelectorAll(selector)].filter(element => !element.closest('section[hidden]'));
   const observed = new WeakSet();
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {

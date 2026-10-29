@@ -32,16 +32,16 @@
   });
   const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
   const fonts = document.fonts?.ready || Promise.resolve();
-  Promise.all([Promise.race([fonts, wait(900)]), wait(1250)]).then(async () => {
+  Promise.all([Promise.race([fonts, wait(450)]), wait(625)]).then(async () => {
     if (finished) return;
     root.classList.add('intro-revealing'); reveal();
     overlay.querySelector('.intro-title').animate([
       { opacity: 1, transform: 'translateY(0)', filter: 'blur(0px)' },
       { opacity: 0, transform: 'translateY(14px)', filter: 'blur(6px)' }
-    ], { duration: 300, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' });
+    ], { duration: 150, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' });
     const curtain = overlay.animate([
       { transform: 'translateY(0)' }, { transform: 'translateY(100%)' }
-    ], { duration: 1200, delay: 120, easing: 'cubic-bezier(.76,0,.24,1)', fill: 'forwards' });
+    ], { duration: 600, delay: 60, easing: 'cubic-bezier(.76,0,.24,1)', fill: 'forwards' });
     try { await curtain.finished; } catch {}
     finish();
   });

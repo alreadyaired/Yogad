@@ -1,0 +1,7 @@
+.gallery-page-photos{padding:36px var(--gutter) 80px}
+.gallery-collection{position:relative;width:100%;min-height:1px}
+.gallery-collection .gallery-photo{border-radius:12px}
+.gallery-collection .gallery-photo img{object-fit:contain;filter:none;transition:none;transform:none}
+.gallery-page .desktop-nav>a[aria-current=page]:before{transform:scaleX(1)}
+.gallery-page .menu-panel>a[href="gallery.html"]{color:var(--accent)}
+@media(max-width:600px){.gallery-page-photos{padding:28px 20px 56px}}
