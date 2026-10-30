@@ -152,7 +152,7 @@
     event.preventDefault();
     cancelGlide();
     const from = scrollY;
-    const inset = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
+    const inset = ['gallery','about'].includes(target.id) ? 0 : parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
     const to = Math.max(0, Math.min(document.documentElement.scrollHeight-innerHeight, target.getBoundingClientRect().top+from-inset));
     const distance = to-from;
     const duration = Math.min(1250, Math.max(700, Math.abs(distance)*.18));

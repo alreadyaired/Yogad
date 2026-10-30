@@ -1,4 +1,4 @@
-// Justify each photo row across the available width within the one-screen gallery.
+// Fit the homepage photo rows into the selected viewport-height section.
 (() => {
   const gallery = document.querySelector('.photo-gallery');
   if (!gallery) return;
@@ -7,14 +7,17 @@
   function layout() {
     const photos = [...gallery.querySelectorAll('.gallery-photo')];
     const width = gallery.clientWidth;
-    const height = gallery.clientHeight;
-    if (!width || !height || !photos.length) return;
+    const section = gallery.closest('#gallery');
+    const sectionStyle = getComputedStyle(section);
+    let height = Math.max(160, section.getBoundingClientRect().height - (gallery.getBoundingClientRect().top - section.getBoundingClientRect().top) - parseFloat(sectionStyle.paddingBottom));
+    if (!width || !photos.length) return;
     const ratios = photos.map(photo => {
       const image = photo.querySelector('img');
       return Number(image.getAttribute('width')) / Number(image.getAttribute('height'));
     });
     const sums = [0];
     ratios.forEach(ratio => sums.push(sums[sums.length - 1] + ratio));
+    const requestedRows = Math.min(photos.length, Number(gallery.dataset?.rows) || 0);
     const rowHeight = (start, end) =>
       (width - gap * (end - start - 1)) / (sums[end] - sums[start]);
     const cost = Array.from({ length: photos.length + 1 }, () => Array(photos.length + 1).fill(Infinity));
@@ -22,9 +25,9 @@
     cost[0][0] = 0;
     let rowCount = 1;
     let usedHeight = rowHeight(0, photos.length);
+    let bestScore = Infinity;
 
-    // Find the most balanced full-width rows for each count, then use the
-    // largest arrangement that fits the existing height. No scroll interception.
+    // Choose rows closest to the available shape to minimise image cropping.
     for (let count = 1; count <= photos.length; count++) {
       for (let end = count; end <= photos.length; end++) {
         for (let start = count - 1; start < end; start++) {
@@ -38,7 +41,11 @@
         }
       }
       const total = cost[count][photos.length] + gap * (count - 1);
-      if (total <= height && total >= usedHeight) {
+      const contentHeight = total - gap * (count - 1);
+      const availableHeight = height - gap * (count - 1);
+      const score = requestedRows ? 0 : contentHeight > 0 && availableHeight > 0 ? Math.abs(Math.log(contentHeight / availableHeight)) : Infinity;
+      if ((!requestedRows || count === requestedRows) && score < bestScore) {
+        bestScore = score;
         rowCount = count;
         usedHeight = total;
       }
@@ -51,26 +58,29 @@
       end = start;
     }
 
-    // If even one row is taller than the viewport (e.g. only two portraits),
-    // preserve the full images and height limit rather than crop or stretch them.
-    const scale = Math.min(1, height / usedHeight);
-    let top = (height - usedHeight * scale) / 2;
+    if (requestedRows) {
+      const nextHeight = `${height}px`;
+      if (gallery.style.height !== nextHeight) gallery.style.height = nextHeight;
+    }
+    const rowGaps = gap * (rows.length - 1);
+    const scale = (height - rowGaps) / (usedHeight - rowGaps);
+    let top = 0;
     for (const row of rows) {
       const photoHeight = row.height * scale;
-      let left = (width - width * scale) / 2;
+      let left = 0;
       for (let i = row.start; i < row.end; i++) {
-        const photoWidth = photoHeight * ratios[i];
+        const photoWidth = row.height * ratios[i];
         Object.assign(photos[i].style, {
           width: `${photoWidth}px`, height: `${photoHeight}px`,
           left: `${left}px`, top: `${top}px`
         });
-        left += photoWidth + gap * scale;
+        left += photoWidth + gap;
       }
-      top += photoHeight + gap * scale;
+      top += photoHeight + gap;
     }
   }
 
   layout();
   if (typeof ResizeObserver === 'function') new ResizeObserver(layout).observe(gallery);
-  else addEventListener('resize', layout, { passive: true });
+  addEventListener('resize', layout, { passive: true });
 })();

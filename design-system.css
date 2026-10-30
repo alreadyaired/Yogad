@@ -1,0 +1,74 @@
+/* Shared public-site typography and controls. Georgia + Instrument Sans only. */
+@font-face{font-family:YogadyahSans;src:url('assets/instrument-sans.woff2') format('woff2');font-weight:400 700;font-display:swap}
+:root{--font-body:YogadyahSans,Arial,sans-serif;--font-heading:Georgia,'Times New Roman',serif;--type-display:clamp(38px,4.8vw,56px);--type-section:clamp(31px,3.5vw,40px);--type-card:24px;--type-body:16px;--type-compact:14px;--type-meta:12px;--weight-heading:600;--body-leading:1.65}
+body{font-family:var(--font-body);font-size:var(--type-body);line-height:var(--body-leading);letter-spacing:-.015em}
+body.home-page .hero h1,body .page-hero h1,body .article-heading h1{font-family:var(--font-heading);font-size:var(--type-display);font-weight:var(--weight-heading);line-height:1.1;letter-spacing:-.04em}
+body.home-page .teaching-header h2,body.home-page .teacher-profile h2,body.home-page .testimonial-wall-heading h2,body.home-page .gallery-heading h2,body.home-page .journal-editorial-heading h2,body.home-page .contact-heading h2,body .first-visit h2,body .class-detail-copy h2{font-family:var(--font-heading);font-size:var(--type-section);font-weight:var(--weight-heading);line-height:1.15;letter-spacing:-.035em}
+body.home-page .teacher-profile h3,body.home-page .journal-story h3,body.home-page .teaching-services .service-course-card:nth-child(n) .service-name,body .article-card h2{font-family:var(--font-heading);font-size:var(--type-card);font-weight:var(--weight-heading);line-height:1.25;letter-spacing:-.025em}
+body.home-page .journal-compact h3{font-size:22px}
+body .article-prose h2,body .footer h2{font-family:var(--font-heading);font-size:28px;font-weight:var(--weight-heading);line-height:1.25;letter-spacing:-.025em}
+body .eyebrow,body.home-page .teacher-profile>.eyebrow{font-family:var(--font-body);font-size:11px;font-weight:550;line-height:1.5;letter-spacing:.08em;text-transform:uppercase}
+body.home-page .hero-copy,body .page-hero p:not(.eyebrow),body .article-heading>p:not(.eyebrow){font-family:var(--font-body);font-size:18px;line-height:1.65;letter-spacing:-.015em}
+body.home-page .teacher-profile>p:not(.eyebrow),body.home-page .teacher-profile .principles,body .class-detail-copy>p:not(.eyebrow):not(.class-detail-subtitle),body .first-visit-layout p:not(.eyebrow):not(.sample-notice){font-size:var(--type-body);line-height:var(--body-leading)}
+body.home-page .teaching-intro p,body.home-page .journal-story-excerpt,body .article-card>p:not(.eyebrow){font-size:15px;line-height:1.65}
+body.home-page .teaching-services .service-course-card:nth-child(n) .service-description,body.home-page .review-wall-card blockquote{font-family:var(--font-body);font-size:var(--type-compact);line-height:1.6;letter-spacing:-.01em}
+body.home-page .teaching-services .service-course-card:nth-child(n) .service-subtitle{font-size:14px;line-height:1.5;font-weight:500}
+body.home-page .journal-story-category,body.home-page .journal-story-date,body .article-card .eyebrow{font-family:var(--font-body);font-size:var(--type-meta);line-height:1.5;font-weight:400;letter-spacing:.015em}
+body .button,body.home-page .teaching-services .service-course-card:nth-child(n) .service-card-footer .button,body.home-page .journal-editorial-heading>.button{font-family:var(--font-body);font-size:14px;font-weight:550;line-height:1.4;letter-spacing:0;min-height:44px;border-radius:10px}
+body .text-link,body.home-page .journal-story-read,body.home-page .teacher-profile>.text-link{font-family:var(--font-body);font-size:14px;font-weight:500;line-height:1.5;letter-spacing:0}
+body.home-page .review-wall-person h3,body.home-page .review-wall-photo .review-wall-person h3{font-family:var(--font-heading);font-size:16px;font-weight:600;line-height:1.3;letter-spacing:0}
+body.home-page .review-wall-person>p{font-family:var(--font-body);font-size:12px;line-height:1.4}
+body .article-prose{font-family:var(--font-body);font-size:18px;line-height:1.8}
+
+/* Contact: common baselines and spacing, without inherited fieldset offsets. */
+body.home-page .contact-split-section>.contact-layout{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+body.home-page .contact-split-section .contact-heading,body.home-page .contact-split-section .studio-enquiry-form{padding:48px clamp(28px,4.4vw,64px);min-width:0}
+body.home-page .contact-split-section .studio-enquiry-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;align-content:start;background:var(--form,#EEE7F2)}
+.contact-form-intro{grid-column:1/-1;margin-bottom:4px}
+.contact-form-intro .eyebrow{margin-bottom:12px}
+.contact-form-intro h3{font-family:var(--font-heading);font-size:28px;font-weight:600;line-height:1.25;letter-spacing:-.025em}
+body.home-page .contact-split-section .studio-enquiry-form>label{display:grid;grid-column:auto;align-content:start;gap:8px;margin:0;font-family:var(--font-body);font-size:13px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none}
+body.home-page .contact-split-section .studio-enquiry-form>.full,body.home-page .contact-split-section .studio-enquiry-form>.form-status,body.home-page .contact-split-section .studio-enquiry-form>.form-note{grid-column:1/-1}
+body.home-page .contact-split-section .studio-enquiry-form input:not([type=radio]),body.home-page .contact-split-section .studio-enquiry-form select,body.home-page .contact-split-section .studio-enquiry-form textarea{font-family:var(--font-body);font-size:16px;line-height:1.5;letter-spacing:0;font-weight:400;min-height:48px;padding:11px 13px;border:1px solid #B8A9C1;border-radius:10px;background:var(--paper);color:var(--ink);box-shadow:none;margin:0}
+body.home-page .contact-split-section .studio-enquiry-form textarea{height:132px;min-height:132px;resize:vertical}
+body.home-page .contact-split-section .timing-options{margin:0;padding:0;border:0;min-width:0;grid-column:1/-1}
+body.home-page .contact-split-section .timing-options legend{font-family:var(--font-body);font-size:13px;font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;color:var(--ink);padding:0;margin:0 0 8px}
+body.home-page .contact-split-section .timing-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+body.home-page .contact-split-section .timing-choices>label{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin:0;padding:11px 13px;min-height:48px;border:1px solid #B8A9C1;border-radius:10px;font-family:var(--font-body);font-size:15px;line-height:1.5;letter-spacing:0;text-transform:none;background:var(--paper);color:var(--ink)}
+body.home-page .contact-split-section .timing-choices input[type=radio]{display:block;flex:0 0 18px;appearance:auto;width:18px;height:18px;min-height:0;max-height:18px;margin:0;padding:0;accent-color:var(--accent)}
+body.home-page .contact-split-section .studio-enquiry-form>.button{grid-column:1/-1;border-radius:10px;min-height:48px;margin:0;font-family:var(--font-body);font-size:15px;font-weight:550;line-height:1.4;text-transform:none;letter-spacing:0;padding:12px 18px}
+body.home-page .contact-split-section .studio-enquiry-form>.form-note,body.home-page .contact-split-section .studio-enquiry-form>.form-status{font-family:var(--font-body);font-size:12px;line-height:1.6;letter-spacing:0;margin:0}
+body.home-page .contact-split-section .studio-contact-details{gap:24px;margin-top:30px}
+body.home-page .contact-split-section .studio-contact-details dt{font-family:var(--font-body);font-size:12px;line-height:1.5;letter-spacing:.03em}
+body.home-page .contact-split-section .studio-contact-details dd,body.home-page .contact-split-section .studio-phone{font-family:var(--font-body);font-size:16px;line-height:1.65;font-weight:400;letter-spacing:0}
+@media(max-width:800px){body.home-page .contact-split-section .studio-enquiry-form{grid-template-columns:1fr}body.home-page .contact-split-section .studio-enquiry-form>label{grid-column:1/-1}}
+@media(max-width:700px){:root{--type-display:40px;--type-section:32px;--type-card:24px}body.home-page .contact-split-section>.contact-layout{grid-template-columns:1fr}body.home-page .contact-split-section .contact-heading,body.home-page .contact-split-section .studio-enquiry-form{padding:36px 24px}body.home-page .hero-copy,body .page-hero p:not(.eyebrow){font-size:17px}body .article-prose{font-size:17px}}
+
+/* Contact continues the Journal's canvas, gutters and editorial spacing. */
+body.home-page #contact.contact-split-section{padding:60px clamp(20px,3.2vw,56px) 64px;background:var(--paper);border-top:1px solid var(--line)}
+body.home-page #contact.contact-split-section>.contact-layout{width:100%;max-width:1200px;margin-inline:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(35px,5vw,72px);background:transparent;border:0;align-items:start}
+body.home-page #contact.contact-split-section .contact-heading,body.home-page #contact.contact-split-section .studio-enquiry-form{padding:0;background:transparent}
+body.home-page #contact .contact-form-intro{margin:0 0 5px}
+body.home-page #contact .contact-form-intro .eyebrow{display:none}
+body.home-page #contact .contact-form-intro h3{font-size:28px;line-height:1.25;margin-bottom:4px}
+body.home-page #contact.contact-split-section .studio-enquiry-form input:not([type=radio]),body.home-page #contact.contact-split-section .studio-enquiry-form select,body.home-page #contact.contact-split-section .studio-enquiry-form textarea,body.home-page #contact.contact-split-section .timing-choices>label{background:var(--form,#F8F6F9);border-color:#D4C9DA}
+body.home-page #contact.contact-split-section .timing-choices>label:has(input:checked){background:var(--soft);border-color:var(--accent)}
+body.home-page #contact.contact-split-section .studio-enquiry-form>.button{background:var(--accent);color:var(--white);border-color:var(--accent)}
+body.home-page #contact.contact-split-section .studio-enquiry-form>.button:hover{background:var(--deep);border-color:var(--deep)}
+@media(max-width:700px){body.home-page #contact.contact-split-section{padding-block:44px 48px}body.home-page #contact.contact-split-section>.contact-layout{grid-template-columns:1fr;gap:36px}body.home-page #contact .contact-form-intro{padding-top:28px;border-top:1px solid var(--line)}}
+/* Teacher profile facts share the existing About typography and plum palette. */
+body.home-page #about .teacher-profile h2{margin-bottom:16px}
+body.home-page #about .teacher-profile h3{margin:0 0 10px}
+body.home-page #about .teacher-philosophy{margin-top:20px}
+body.home-page #about .teacher-philosophy h4,body.home-page #about .teacher-details dt{font:600 12px/1.5 var(--font-body);letter-spacing:.015em;color:var(--accent);margin:0 0 5px}
+body.home-page #about .teacher-philosophy p{font:400 15px/1.6 var(--font-body);color:var(--ink);margin:0}
+body.home-page #about .teacher-details{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin:22px 0 0}
+body.home-page #about .teacher-details>div{border-top:1px solid rgb(53 43 61 / 12%);padding-top:12px;min-width:0}
+body.home-page #about .teacher-details dd{font:400 14px/1.6 var(--font-body);color:var(--ink);margin:0}
+body.home-page #about .teacher-profile .principles{margin:16px 0 10px;font-size:14px}
+body.home-page #about .teacher-profile .principles li{padding-block:3px;line-height:1.5}
+body.home-page #about .teacher-portrait img{height:clamp(440px,68svh,660px)}
+@media(max-width:900px){body.home-page #about .teacher-details{gap:14px}body.home-page #about .teacher-portrait img{height:500px}}
+@media(max-width:650px){body.home-page #about .teacher-details{grid-template-columns:1fr 1fr}body.home-page #about .teacher-portrait img{height:380px}}
+@media(max-width:380px){body.home-page #about .teacher-details{grid-template-columns:1fr}}
+@media(min-width:901px){body.home-page #about.teacher-introduction{padding-block:18px}}
